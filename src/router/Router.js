@@ -5,6 +5,10 @@ import Dashboard from "../components/dashboard/Dashboard";
 import UpdatePizza from "../components/pizza/UpdatePizza";
 import DeletePizza from "../components/pizza/DeletePizza";
 import AddPizza from "../components/pizza/AddPizza";
+import AddCoupon from "../components/coupons/AddCoupon";
+import UpdateCoupon from "../components/coupons/UpdateCoupon";
+import DeleteCoupon from "../components/coupons/DeleteCoupon";
+import Coupons from "../components/coupons/Coupons"
 
 export default createBrowserRouter([
 	{ path: "/", element: <Navigate to="/login" replace /> },
@@ -14,5 +18,10 @@ export default createBrowserRouter([
 	{ path: "/menu/update/:pizzaId", element: <UpdatePizza /> },
 	{ path: "/menu/delete/:pizzaId", element: <DeletePizza /> },
 	{ path: "/addpizza", element: <AddPizza /> },
+
+	{ path: "/coupon", element: <Coupons /> },
+	{ path: "/coupon/update/:couponId", element: <UpdateCoupon /> },
+	{ path: "/coupon/delete/:couponId", element: <DeleteCoupon /> },
+	{ path: "/addcoupon", element: <AddCoupon /> },
 
 ]);

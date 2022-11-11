@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
 
-export default function Register() {
+export default function AddPizza() {
     const { token } = useUser();
     const [error, setError] = useState();
     let navigate = useNavigate();

@@ -23,7 +23,7 @@ export default function Dashboard() {
       <button type="button" className="btn btn-primary mx-2" >
         View Catalouge
       </button>
-      <button type="button" className="btn btn-primary mx-2" >
+      <button type="button" className="btn btn-primary mx-2" onClick={() => navigate("/coupon")}>
         Add/Update/Remove Coupons
       </button>
       <button type="button" className="btn btn-primary mx-2" >

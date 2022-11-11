@@ -2,6 +2,7 @@
 import Logout from '../../authentication/Logout';
 import { useNavigate } from 'react-router-dom';
 import { useUser  } from '../../hooks/useUser';
+import NavBar from '../navbar/Navbar';
 
 
 export default function Dashboard() {
@@ -10,6 +11,8 @@ export default function Dashboard() {
   const { token } = useUser();
 
   return (
+    <>
+    <NavBar />
     <div className='my-3'>
       <button type="button"  className="btn btn-primary mx-2" >
         Check All Orders
@@ -32,5 +35,6 @@ export default function Dashboard() {
       <Logout />
       {/* {!token && <button onClick={() => navigate("/login")}>Login</button>} */}
     </div>
+    </>
   );
 }

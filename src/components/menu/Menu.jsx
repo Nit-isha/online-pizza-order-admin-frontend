@@ -15,7 +15,8 @@ export default function Menu() {
     useEffect(() => {
         fetch("http://localhost:9001/menu", { method: "GET" })
             .then((res) => res.json())
-            .then((json) => { setmenu(json) })
+            .then((json) => { 
+                setmenu(json) })
     }, [])
 
     console.log(menu);
@@ -34,12 +35,11 @@ export default function Menu() {
 
     return (
         <>
-            <div>Menu</div>
-            {!token && <button onClick={() => navigate("/login")}>Login</button>}
-            {!token && <button onClick={() => navigate("/register")}>Signup</button>}
-            {token && <button onClick={() => navigate("/user/about")}>About</button>}
-            <Logout />
+            {token && <button onClick={() => navigate("/dashboard")}>Back</button>}
+            <button className='addPizza mx-2'>Add Pizza</button>
 
+
+            <div>Menu</div>
             <div className="filterPizza">
                 {
                     <>
@@ -71,12 +71,16 @@ export default function Menu() {
                         return (
                             <>
                                 <article key={pizzaId}>
+                                    <div className="pizzaid">{pizzaId}</div>
                                     <div className="pizzatype">{pizzaType}</div>
                                     <div className="pizzaname">{pizzaName}</div>
                                     <div className="pizzasize">{pizzaSize}</div>
                                     <div className="pizzadesc">{pizzaDescription}</div>
                                     <div className="pizzacost">{pizzaCost}</div>
-                                    <button id={pizzaId} onClick={() => setCart([...cart, pizza])}>Add to cart</button>
+                                    <button className='update mx-2' id={pizzaId} onClick={() => navigate(`/menu/${pizzaId}`)}>Update</button>
+                                    <button className='delete mx-2'>Delete</button>
+                                    <br/>
+                                    <br/>
                                 </article>
                             </>
                         )
@@ -84,20 +88,6 @@ export default function Menu() {
                 }
             </div>
             <br />
-            <div className='cartList'>
-                {cart.map((pizzaSelected) => {
-                    const { pizzaId: id, pizzaType: type, pizzaName: name, pizzaSize: size, pizzaCost: cost } = pizzaSelected;
-                    return (
-                        <article key={id}>
-                            <div className="cartType">{type}</div>
-                            <div className="cartName">{name}</div>
-                            <div className="cartSize">{size}</div>
-                            <div className="cartCost">{cost}</div>
-                        </article>
-                    )
-                })}
-                <button id='checkout' onClick={() => navigate("/cart")}>Checkout</button>
-            </div>
         </>
     )
 }

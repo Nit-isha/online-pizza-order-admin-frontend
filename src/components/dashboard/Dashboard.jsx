@@ -11,10 +11,10 @@ export default function Dashboard() {
   return (
 
     <div>
-      <button type="button" className="btn btn-primary mx-2" >
+      <button type="button"  className="btn btn-primary mx-2" >
         Check All Orders
       </button>
-      <button type="button" className="btn btn-primary mx-2" >
+      <button type="button" onClick={() => navigate("/menu")} className="btn btn-primary mx-2" >
         Add/Update/Remove Pizza
       </button>
       <button type="button" className="btn btn-primary mx-2" >

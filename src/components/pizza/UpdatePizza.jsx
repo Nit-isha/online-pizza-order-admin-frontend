@@ -8,7 +8,6 @@ export default function UpdatePizza() {
     const { pizzaId } = useParams();
     const { token } = useUser();
     const info = usePizzaInfo(pizzaId);
-    console.log(pizzaId);
 
     return (
         <>

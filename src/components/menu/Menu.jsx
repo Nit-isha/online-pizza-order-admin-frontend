@@ -36,7 +36,7 @@ export default function Menu() {
     return (
         <>
             {token && <button onClick={() => navigate("/dashboard")}>Back</button>}
-            <button className='addPizza mx-2'>Add Pizza</button>
+            <button className='addPizza mx-2' onClick={() => navigate("/addpizza")}>Add Pizza</button>
 
 
             <div>Menu</div>
@@ -77,8 +77,16 @@ export default function Menu() {
                                     <div className="pizzasize">{pizzaSize}</div>
                                     <div className="pizzadesc">{pizzaDescription}</div>
                                     <div className="pizzacost">{pizzaCost}</div>
-                                    <button className='update mx-2' id={pizzaId} onClick={() => navigate(`/menu/${pizzaId}`)}>Update</button>
-                                    <button className='delete mx-2'>Delete</button>
+                                    <button className='update mx-2' id={pizzaId} onClick={() => navigate(`/menu/update/${pizzaId}`)}>Update</button>
+                                    <button className='delete mx-2' id={pizzaId} onClick={() => 
+                                        {
+                                            if(window.confirm("Are you sure") == true){
+                                                navigate(`/menu/delete/${pizzaId}`);
+                                            }else{
+                                                navigate(`/menu`);
+                                            }
+                                        }
+                                        }>Delete</button>
                                     <br/>
                                     <br/>
                                 </article>

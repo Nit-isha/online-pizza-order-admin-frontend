@@ -3,14 +3,14 @@ import Logout from '../../authentication/Logout';
 import { useNavigate } from 'react-router-dom';
 import { useUser  } from '../../hooks/useUser';
 
+
 export default function Dashboard() {
 
   let navigate = useNavigate();
   const { token } = useUser();
 
   return (
-
-    <div>
+    <div className='my-3'>
       <button type="button"  className="btn btn-primary mx-2" >
         Check All Orders
       </button>

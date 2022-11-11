@@ -14,7 +14,7 @@ export default function Dashboard() {
     <>
     <NavBar />
     <div className='my-3'>
-      <button type="button"  className="btn btn-primary mx-2" >
+      <button type="button"  className="btn btn-primary mx-2" onClick={() => navigate("/viewallorders")} >
         Check All Orders
       </button>
       <button type="button" onClick={() => navigate("/menu")} className="btn btn-primary mx-2" >
@@ -26,7 +26,7 @@ export default function Dashboard() {
       <button type="button" className="btn btn-primary mx-2" onClick={() => navigate("/coupon")}>
         Add/Update/Remove Coupons
       </button>
-      <button type="button" className="btn btn-primary mx-2" >
+      <button type="button" className="btn btn-primary mx-2" onClick={() => navigate("/viewcustomers")}>
         View Customer Details
       </button>
       <button type="button" className="btn btn-primary mx-2" >

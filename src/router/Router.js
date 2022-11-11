@@ -9,6 +9,8 @@ import AddCoupon from "../components/coupons/AddCoupon";
 import UpdateCoupon from "../components/coupons/UpdateCoupon";
 import DeleteCoupon from "../components/coupons/DeleteCoupon";
 import Coupons from "../components/coupons/Coupons"
+import Customer from "../components/customer/Customer";
+import AllOrders from "../components/orders/AllOrders";
 
 export default createBrowserRouter([
 	{ path: "/", element: <Navigate to="/login" replace /> },
@@ -23,5 +25,6 @@ export default createBrowserRouter([
 	{ path: "/coupon/update/:couponId", element: <UpdateCoupon /> },
 	{ path: "/coupon/delete/:couponId", element: <DeleteCoupon /> },
 	{ path: "/addcoupon", element: <AddCoupon /> },
-
+	{ path: "/viewcustomers", element: <Customer /> },
+	{ path: "/viewallorders", element: <AllOrders /> },
 ]);

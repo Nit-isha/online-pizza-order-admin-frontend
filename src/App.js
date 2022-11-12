@@ -19,7 +19,7 @@ import AllOrders from "./components/orders/AllOrders";
 import AddCoupon from "./components/coupons/AddCoupon";
 import DeleteCoupon from "./components/coupons/DeleteCoupon";
 import { useUser } from "./hooks/useUser";
-import OrderData from "./components/orders/OrderData";
+import CustomerData from "./components/orders/CustomerData";
 
 function App() {
   const { token, logout } = useUser();
@@ -41,7 +41,8 @@ function App() {
         <Route path= "/coupon/delete/:couponId" exact element= {<DeleteCoupon/>} />
         <Route path= "/addcoupon" exact element= {<AddCoupon/>} />
         <Route path= "/viewcustomers" exact element= {<Customer/>} />
-        <Route path= "/viewallorders" exact element= {<AllOrders/>} />
+        <Route path= "/viewallorders" exact element= {<AllOrders maxQuantity={5}/>} />
+        <Route path= "/viewcustomerdetails/:custId" exact element= {<CustomerData/>} />
       </Routes>
         </Router>
       </div>

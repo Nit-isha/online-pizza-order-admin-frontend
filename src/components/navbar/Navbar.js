@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useUser } from '../../hooks/useUser';
 
 export default function NavBar() {
-
+    let navigate = useNavigate();
+    const { token, logout } = useUser();
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -16,16 +18,16 @@ export default function NavBar() {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to="#">Home</Link>
                             </li>
-                            <li className="nav-item"><Link className="nav-link"  to="/">All Orders</Link></li>
+                            <li className="nav-item"><Link className="nav-link"  to="/viewallorders">All Orders</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/menu">Pizza List</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/">Catalogue</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/l">Coupons list</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/">Customers list</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/">Find Order</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to="/coupon">Coupons list</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to="/viewcustomers">Customers list</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to="#">Find Order</Link></li>
                             </ul>
                         </div>
                         <form className="d-flex">
-                            <button className="btn btn-outline-success" type="submit">Logout</button>
+                            <button className="btn btn-outline-success" type="submit" onClick={() => { logout(); navigate("/login")}} >Logout</button>
                         </form>
                     
                 </div>

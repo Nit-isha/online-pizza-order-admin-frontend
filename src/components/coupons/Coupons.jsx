@@ -25,7 +25,6 @@ export default function Coupons() {
 
     return (
         <>
-            {token && <button className='btn btn-primary mx-2 my-2' onClick={() => navigate("/dashboard")}>Back</button>}
             <button className='btn btn-primary mx-2 my-2' onClick={() => navigate("/addcoupon")}>Add Coupon</button>
             <div>
                 {

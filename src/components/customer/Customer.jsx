@@ -26,7 +26,6 @@ export default function Customer() {
 
     return (
         <>
-            {token && <button className='btn btn-primary mx-2 my-2' onClick={() => navigate("/dashboard")}>Back</button>}
             <section className="intro">
                 <div className="gradient-custom-1 h-100">
                     <div className="mask d-flex align-items-center h-100">

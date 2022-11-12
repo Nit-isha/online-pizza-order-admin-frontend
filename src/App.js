@@ -30,17 +30,17 @@ function App() {
         <Routes>
         <Route path= "/" exact element= {<Login/>} />
         <Route path= "/menu" exact element= {<Menu/>} />
-        <Route  path= "/dashboard" element={<Dashboard/>} />
-        <Route path= "/login" element={<Login/>}/>
-        <Route path="/menu/update/:pizzaId" element={<UpdatePizza />}  />
-        <Route path= "/menu/delete/:pizzaId" element={<DeletePizza />} />
-        <Route path="/addpizza" element={<AddPizza />}  />
-        <Route path= "/coupon" element={<Coupons /> } />
-        <Route path= "/coupon/update/:couponId" element= {<UpdateCoupon/>} />
-        <Route path= "/coupon/delete/:couponId" element= {<DeleteCoupon/>} />
-        <Route path= "/addcoupon" element= {<AddCoupon/>} />
-        <Route path= "/viewcustomers" element= {<Customer/>} />
-        <Route path= "/viewallorders" element= {<AllOrders/>} />
+        <Route  path= "/dashboard" exact element={<Dashboard/>} />
+        <Route path= "/login" exact element={<Login/>}/>
+        <Route path="/menu/update/:pizzaId" exact element={<UpdatePizza />}  />
+        <Route path= "/menu/delete/:pizzaId" exact  element={<DeletePizza />} />
+        <Route path="/addpizza" exact element={<AddPizza />}  />
+        <Route path= "/coupon" exact element={<Coupons /> } />
+        <Route path= "/coupon/update/:couponId"exact element= {<UpdateCoupon/>} />
+        <Route path= "/coupon/delete/:couponId" exact element= {<DeleteCoupon/>} />
+        <Route path= "/addcoupon" exact element= {<AddCoupon/>} />
+        <Route path= "/viewcustomers" exact element= {<Customer/>} />
+        <Route path= "/viewallorders" exact element= {<AllOrders/>} />
       </Routes>
         </Router>
       </div>

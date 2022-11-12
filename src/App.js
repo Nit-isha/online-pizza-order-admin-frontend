@@ -42,7 +42,6 @@ function App() {
         <Route path= "/addcoupon" element= {<AddCoupon/>} />
         <Route path= "/viewcustomers" element= {<Customer/>} />
         <Route path= "/viewallorders" element= {<AllOrders/>} />
-        <Route path= "/vieworderdetails" element= {<OrderData/>} />
       </Routes>
         </Router>
       </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Logout from '../../authentication/Logout';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { useUser } from "../../hooks/useUser";
 

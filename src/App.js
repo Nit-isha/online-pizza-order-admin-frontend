@@ -19,6 +19,7 @@ import AllOrders from "./components/orders/AllOrders";
 import AddCoupon from "./components/coupons/AddCoupon";
 import DeleteCoupon from "./components/coupons/DeleteCoupon";
 import { useUser } from "./hooks/useUser";
+import OrderData from "./components/orders/OrderData";
 
 function App() {
   const { token, logout } = useUser();
@@ -41,6 +42,7 @@ function App() {
         <Route path= "/addcoupon" element= {<AddCoupon/>} />
         <Route path= "/viewcustomers" element= {<Customer/>} />
         <Route path= "/viewallorders" element= {<AllOrders/>} />
+        <Route path= "/vieworderdetails" element= {<OrderData/>} />
       </Routes>
         </Router>
       </div>

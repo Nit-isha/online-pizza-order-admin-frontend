@@ -4,6 +4,7 @@ import { useUser } from '../../hooks/useUser';
 
 export default function NavBar() {
     let navigate = useNavigate();
+    // eslint-disable-next-line
     const { token, logout } = useUser();
     return (
         <div>
@@ -20,16 +21,13 @@ export default function NavBar() {
                             </li>
                             <li className="nav-item"><Link className="nav-link"  to="/viewallorders">All Orders</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/menu">Pizza List</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/">Catalogue</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/coupon">Coupons list</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/viewcustomers">Customers list</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="#">Find Order</Link></li>
                             </ul>
                         </div>
                         <form className="d-flex">
                             <button className="btn btn-outline-success" type="submit" onClick={() => { logout(); navigate("/login")}} >Logout</button>
                         </form>
-                    
                 </div>
             </nav>
 

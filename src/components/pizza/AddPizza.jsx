@@ -8,7 +8,7 @@ export default function AddPizza() {
     let navigate = useNavigate();
 
     return (
-        <div className="addpizza my-3">
+        <div className="container my-3">
             {token &&
                 <form
                     onSubmit={(e) => {
@@ -56,8 +56,8 @@ export default function AddPizza() {
                         <label htmlFor="pizzaCost">Pizza Cost</label>
                         <input type="number" name="pizzaCost" id="pizzaCost"  required />
                         <br />
-                        <input type="submit" className='btn btn-primary mx-2 my-1' value="Add" />
-                        <input type="button" className='btn btn-primary mx-2 my-1' onClick={() => navigate("/menu")} value="Cancel" />
+                        <input type="submit" className='btn btn-success mx-2 my-1' value="Add" />
+                        <input type="button" className='btn btn-default mx-2 my-1' onClick={() => navigate("/menu")} value="Cancel" />
                         <p id="error">{error}</p>
                 </form>
             }

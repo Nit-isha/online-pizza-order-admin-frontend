@@ -8,7 +8,7 @@ export default function AddCoupon() {
     let navigate = useNavigate();
 
     return (
-        <div className="align-items-center">
+        <div className="container text-center my-3">
             {token &&
                 <form
                     onSubmit={(e) => {
@@ -50,20 +50,20 @@ export default function AddCoupon() {
                     </select>
                     <br />
                     <label htmlFor="couponName">Coupon Name</label>
-                    <input type="text" name="couponName" className="form-control" id="couponName" required />
+                    <input type="text" name="couponName" className="form-control" id="couponName" placeholder='enter coupon name' required />
                     <br />
                     <label htmlFor="amount">Amount</label>
-                    <input type="number" name="amount" className="form-control" id="amount"  required />
+                    <input type="number" name="amount" className="form-control" id="amount"   placeholder='enter amount' required />
                     <br />
                     <label htmlFor="discount">Discount</label>
-                    <input type="number" name="discount" className="form-control" id="discount"  required />
+                    <input type="number" name="discount" className="form-control" id="discount"  placeholder='enter discount' required />
                     <br />
                     <label htmlFor="couponDesc">Coupon Description</label>
-                    <textarea rows={3} type="text" name="couponDesc" className="form-control" id="couponDesc"  required />
+                    <textarea rows={3} type="text" name="couponDesc" className="form-control" id="couponDesc"  placeholder='enter coupon description' required />
                     <br />
                         
-                    <input type="submit" className='btn btn-primary mx-2 my-1' value="Add" />
-                    <input type="button" className='btn btn-primary mx-2 my-1' onClick={() => navigate("/coupon")} value="Cancel" />
+                    <input type="submit" className='btn btn-success mx-2 my-1' value="Add" />
+                    <input type="button" className='btn btn-default mx-2 my-1' onClick={() => navigate("/coupon")} value="Cancel" />
                     <p id="error">{error}</p>
                 </form>
             }

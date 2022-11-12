@@ -12,8 +12,8 @@ export default function UpdateCoupon() {
 
     return (
         <>
-            <div>Update coupon Information</div>
-            <div className="update">
+            <div className="container my-3 ">
+            <h1>Update coupon Information</h1>
                 {
                     <form onSubmit={(e) => {
                         e.preventDefault();
@@ -57,8 +57,8 @@ export default function UpdateCoupon() {
                     <label htmlFor="couponDesc">Coupon Description</label>
                     <textarea rows={3} type="text" name="couponDesc" className="form-control" id="couponDesc" defaultValue={info?.couponDescription} required />
                     <br />
-                        <input type="submit" value="Update" />
-                        <input type="button" value="Cancel" onClick={() => navigate("/coupon")} />
+                        <input type="submit" value="Update" className='btn btn-success' />
+                        <input type="button" value="Cancel"  className='btn btn-default' onClick={() => navigate("/coupon")} />
                     </form>
                 }
             </div>

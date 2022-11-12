@@ -10,8 +10,8 @@ export default function UpdatePizza() {
     const info = usePizzaInfo(pizzaId);
 
     return (
-        <>
-            <div>Update Pizza Information</div>
+            <div className='container my-3'>
+                <h1>Update Pizza Information</h1>
             <div className="update">
                 {
                     <form onSubmit={(e) => {
@@ -51,12 +51,11 @@ export default function UpdatePizza() {
                         <label htmlFor="pizzaCost">Pizza Cost</label>
                         <input type="number" name="pizzaCost" id="pizzaCost" defaultValue={info?.pizzaCost} required />
                         <br />
-                        <input type="submit" value="Update" />
-                        <br />
-                        <input type="button" value="Cancel" onClick={() => navigate("/menu")} />
+                        <input type="submit" className="btn btn-success mx-2 my-2" value="Update" />
+                        <input type="button" className="btn btn-default mx-2 my-2" value="Cancel" onClick={() => navigate("/menu")} />
                     </form>
                 }
             </div>
-        </>
+        </div>
     )
 }

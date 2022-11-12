@@ -28,19 +28,20 @@ function App() {
         {token && <NavBar/>}
         
         <Routes>
-        <Route path= "/" exact element= {<Login/>} />
-        <Route path= "/menu" exact element= {<Menu/>} />
-        <Route  path= "/dashboard" exact element={<Dashboard/>} />
-        <Route path= "/login" exact element={<Login/>}/>
-        <Route path="/menu/update/:pizzaId" exact element={<UpdatePizza />}  />
-        <Route path= "/menu/delete/:pizzaId" exact  element={<DeletePizza />} />
-        <Route path="/addpizza" exact element={<AddPizza />}  />
-        <Route path= "/coupon" exact element={<Coupons /> } />
-        <Route path= "/coupon/update/:couponId"exact element= {<UpdateCoupon/>} />
-        <Route path= "/coupon/delete/:couponId" exact element= {<DeleteCoupon/>} />
-        <Route path= "/addcoupon" exact element= {<AddCoupon/>} />
-        <Route path= "/viewcustomers" exact element= {<Customer/>} />
-        <Route path= "/viewallorders" exact element= {<AllOrders/>} />
+        {!token && <Route path= "/" exact element= {<Login key="login"/>} />}
+        {token && <Route path= "/" exact element= {<Dashboard key="home"/>} />}
+        <Route path= "/menu" exact element= {<Menu key="menu"/>} />
+        <Route  path= "/dashboard" exact element={<Dashboard key="dashboard"/>} />
+        {/* <Route path= "/login" exact element={<Login key="login"/>}/> */}
+        <Route path="/menu/update/:pizzaId" exact element={<UpdatePizza key="update_pizza" />}  />
+        <Route path= "/menu/delete/:pizzaId" exact  element={<DeletePizza key="delete_pizza"/>} />
+        <Route path="/addpizza" exact element={<AddPizza key="add_pizza"/>}  />
+        <Route path= "/coupon" exact element={<Coupons key="coupon"/> } />
+        <Route path= "/coupon/update/:couponId"exact element= {<UpdateCoupon key="update_coupon"/>} />
+        <Route path= "/coupon/delete/:couponId" exact element= {<DeleteCoupon key="delete_coupon"/>} />
+        <Route path= "/addcoupon" exact element= {<AddCoupon key="add_coupon"/>} />
+        <Route path= "/viewcustomers" exact element= {<Customer key="customer_list"/>} />
+        <Route path= "/viewallorders" exact element= {<AllOrders key="order_list"/>} />
       </Routes>
         </Router>
       </div>

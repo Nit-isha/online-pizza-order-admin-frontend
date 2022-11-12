@@ -6,7 +6,7 @@ export default function NavBar() {
     let navigate = useNavigate();
     const { token, logout } = useUser();
     return (
-        <div>
+        <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="#">Yolo-Pizza</Link>
@@ -16,23 +16,22 @@ export default function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="#">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/dashboard">Home</Link>
                             </li>
-                            <li className="nav-item"><Link className="nav-link"  to="/viewallorders">All Orders</Link></li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/viewallorders">All Orders</Link>
+                            </li>
                             <li className="nav-item"><Link className="nav-link" to="/menu">Pizza List</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/">Catalogue</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/coupon">Coupons list</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/viewcustomers">Customers list</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="#">Find Order</Link></li>
-                            </ul>
-                        </div>
-                        <form className="d-flex">
-                            <button className="btn btn-outline-success" type="submit" onClick={() => { logout(); navigate("/login")}} >Logout</button>
+                        </ul>
+                        <form className="d-flex justify-content-end">
+                            <button className="btn btn-outline-success" type="submit" onClick={() => { logout(); navigate("/login") }} >Logout</button>
                         </form>
-                    
+                    </div>
+                   
                 </div>
             </nav>
-
-        </div>
+        </>
     )
 }

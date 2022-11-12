@@ -34,8 +34,7 @@ export default function Menu() {
 
     return (
         <>
-            {token && <button onClick={() => navigate("/dashboard")}>Back</button>}
-            <button className='addPizza mx-2' onClick={() => navigate("/addpizza")}>Add Pizza</button>
+            <button className='addPizza btn btn-primary mx-2 my-2' onClick={() => navigate("/addpizza")}>Add Pizza</button>
 
 
             <div>Menu</div>

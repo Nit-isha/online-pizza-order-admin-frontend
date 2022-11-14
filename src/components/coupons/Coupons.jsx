@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useUser } from "../../hooks/useUser";
 
 export default function Coupons() {
@@ -78,6 +79,7 @@ export default function Coupons() {
                                                     <button className='btn btn-danger my-1 mx-2' id={couponId} onClick={() => {
                                                         if (window.confirm("Are you sure") == true) {
                                                             navigate(`/coupon/delete/${couponId}`);
+                                                            toast.info("coupon deleted succesfully..")
                                                         } else {
                                                             navigate(`/coupon`);
                                                         }

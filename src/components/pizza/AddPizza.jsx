@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/useUser';
 import '../../index.css';
+
 
 export default function AddPizza() {
     const { token } = useUser();
     const [error, setError] = useState();
     let navigate = useNavigate();
-
+    
     return (
         <div className="container my-3">
             <h1 > Enter Pizza Details</h1>
@@ -15,6 +17,7 @@ export default function AddPizza() {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
+                        toast.success("Pizza added successfully...")
                         const data = new FormData(e.target); //Create actual data from form element
 
                         fetch("http://localhost:9001/addpizza", {
@@ -77,6 +80,7 @@ export default function AddPizza() {
                     <input type="submit" className='btn btn-success btn-lg btn-block mx-2 my-1' value="Add" />
                     <input type="button" className='btn btn-default btn-lg btn-block mx-2 my-1' onClick={() => navigate("/menu")} value="Cancel" />
                     <p id="error">{error}</p>
+                    
                 </form>
 
             }

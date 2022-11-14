@@ -19,12 +19,14 @@ import DeleteCoupon from "./components/coupons/DeleteCoupon";
 import { useUser } from "./hooks/useUser";
 import OrderData from "./components/orders/OrderData";
 import OrderById from "./components/orders/OrderById";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { token, logout } = useUser();
   return (
     <div>
+      <ToastContainer/>
       <Router>
         {token && <NavBar />}
 

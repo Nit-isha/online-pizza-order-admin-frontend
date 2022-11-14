@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
 import usePizzaInfo from '../../hooks/usePizzaInfo';
 import '../../index.css';
+import { toast } from 'react-toastify';
+
 
 export default function UpdatePizza() {
     let navigate = useNavigate();
@@ -17,6 +19,7 @@ export default function UpdatePizza() {
                 {
                     <form onSubmit={(e) => {
                         e.preventDefault();
+                        toast.success("Pizza updated successfully...")
                         const data = new FormData(e.target);
 
                         fetch(`http://localhost:9001/menu/${pizzaId}`, {

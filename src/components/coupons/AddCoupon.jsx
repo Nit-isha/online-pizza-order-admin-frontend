@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/useUser';
 
 export default function AddCoupon() {
@@ -14,6 +15,7 @@ export default function AddCoupon() {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
+                        toast.success("coupon added successfully..");
                         const data = new FormData(e.target); //Create actual data from form element
 
                         fetch("http://localhost:9001/addcoupon", {

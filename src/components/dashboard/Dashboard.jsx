@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Logout from '../../authentication/Logout';
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/useUser';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -12,9 +11,7 @@ export default function Dashboard() {
   let navigate = useNavigate();
   const [error, setError] = useState();
   const { token } = useUser();
-  const [validateUser, setValidateUser] = useState();
 
-  const notify = () => toast.error("Order not found in database");
 
   return (
     <>
@@ -36,12 +33,13 @@ export default function Dashboard() {
           
                       .then(res => {
                           if (!res.ok) {
+                            toast.error("Order not found in database");
                               throw Error("Order not found in database");
                           }
                           else {
                             navigate(`/vieworder/${data.get("orderId")}`)
                           }
-                      }).catch(err => setError(notify))
+                      }).catch(err => setError(err))
                 
               }}>
 
@@ -51,7 +49,6 @@ export default function Dashboard() {
                           <input type="number" className="form-control-plaintext" style={{border:"solid 1px black"}}name="orderId" id="orderId" placeholder="Enter Order Id" autoFocus required/>
                           <button type="submit" className="btn btn-primary my-3">Submit</button>
                       {/* <p id='error'>{error}</p> */}
-                          <ToastContainer />
                           </div>
                   </div>
               </form>

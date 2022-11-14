@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { useUser } from "../../hooks/useUser";
 import '../../index.css';
@@ -86,6 +87,7 @@ export default function Menu() {
                                                     <button className='btn btn-danger mx-2' id={pizzaId} onClick={() => {
                                                         if (window.confirm("Are you sure") == true) {
                                                             navigate(`/menu/delete/${pizzaId}`);
+                                                            toast.info("Pizza deleted successfully..")
                                                         } else {
                                                             navigate(`/menu`);
                                                         }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
+import { toast } from 'react-toastify';
 import useCouponInfo from '../../hooks/useCouponInfo';
 
 export default function UpdateCoupon() {
@@ -18,6 +19,7 @@ export default function UpdateCoupon() {
                 {
                     <form onSubmit={(e) => {
                         e.preventDefault();
+                        toast.success("coupon updated successfully..");
                         const data = new FormData(e.target);
 
                         fetch(`http://localhost:9001/coupon/${couponId}`, {

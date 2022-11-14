@@ -26,6 +26,7 @@ export default function Customer() {
 
     return (
         <>
+        
             <section className="intro">
                 <div className="gradient-custom-1 h-100">
                     <div className="mask d-flex align-items-center h-100">
@@ -49,7 +50,7 @@ export default function Customer() {
                                                     return (
                                                         <tbody className='tablebody'>
                                                             <tr>
-                                                                <th scope="row" >{customerName}</th>
+                                                                <td scope="row" >{customerName}</td>
                                                                 <td>{customerMobile}</td>
                                                                 <td>{customerEmail}</td>
                                                                 <td>{customerAddress}</td>

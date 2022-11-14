@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
+import '../../App.css';
 
 export default function AddPizza() {
     const { token } = useUser();
@@ -9,7 +10,7 @@ export default function AddPizza() {
 
     return (
         <div className="container my-3">
-            <h1 style={{textAlign: "center",textTransform: "uppercase",color: "#4CAF50",backgroundColor:"purple", borderRadius: " 15px 50px"}}> Enter Pizza Details</h1>
+            <h1 > Enter Pizza Details</h1>
             {token &&
                 <form
                     onSubmit={(e) => {
@@ -46,7 +47,7 @@ export default function AddPizza() {
                     <div className="form-group row ">
                         <label htmlFor="pizzaType" className="col-sm-2 col-form-label">Pizza type</label>
                         <div className="col-sm-10">
-                            <input type="text" className="form-control-plaintext" style={{border:"solid 1px black"}}name="pizzaType" id="pizzaType" placeholder="Enter pizza type" required/>
+                            <input type="text" className="form-control-plaintext" style={{border:"solid 1px black"}}name="pizzaType" id="pizzaType" placeholder="Enter pizza type" autoFocus required/>
                         </div>
                     </div>
                     <div className="form-group row">

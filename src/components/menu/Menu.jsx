@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import { useUser } from "../../hooks/useUser";
+import '../../App.css';
 
 export default function Menu() {
     const [menu, setmenu] = useState([]);

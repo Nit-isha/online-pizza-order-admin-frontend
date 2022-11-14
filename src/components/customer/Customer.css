@@ -20,12 +20,14 @@ table th {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  
 }
-tbody td {
+.tablebody td {
   font-weight: 500;
-  color: #999999;
+  color: #242222;
 }
 
-.tablebody th {
-    color: #666666;
+thead th {
+    color: black;
+    background-color: #71dced;
 }

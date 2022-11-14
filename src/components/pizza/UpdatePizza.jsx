@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
 import usePizzaInfo from '../../hooks/usePizzaInfo';
+import '../../index.css';
 
 export default function UpdatePizza() {
     let navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function UpdatePizza() {
 
     return (
             <div className='container my-3'>
-                <h1 style={{textAlign: "center",textTransform: "uppercase",color: "#4CAF50",backgroundColor:"purple", borderRadius: " 15px 50px"}}>Update Pizza Information</h1>
+                <h1 >Update Pizza Information</h1>
             <div className="update">
                 {
                     <form onSubmit={(e) => {

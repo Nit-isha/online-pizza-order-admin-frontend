@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
 import usePizzaInfo from '../../hooks/usePizzaInfo';
-import '../../App.css';
+import '../../index.css';
 
 export default function UpdatePizza() {
     let navigate = useNavigate();

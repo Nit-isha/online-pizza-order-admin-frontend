@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
-import '../../App.css';
+import '../../index.css';
 
 export default function AddPizza() {
     const { token } = useUser();

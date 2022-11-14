@@ -6,7 +6,6 @@ import "./Coupon.css";
 export default function CouponData(props) {
     const [coupon, setCoupon] = useState([]);
     const { token } = useUser();
-    const [array, setArray] = useState({});
     const location = useLocation();
     const { id, pList, cName } = location.state;
     const [validateUser, setValidateUser] = useState();

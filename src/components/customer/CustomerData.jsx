@@ -35,7 +35,6 @@ export default function CustomerData(props) {
     const { customerName, customerMobile, customerEmail, customerAddress, username } = customer;
     return (
         <>
-            <button className='btn btn-primary mx-2 my-2' onClick={() => navigate("/viewallorders")}>Back</button>
             <section className="intro">
                 <div className="gradient-custom-1 h-100">
                     <div className="mask d-flex align-items-center h-100">

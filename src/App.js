@@ -18,6 +18,7 @@ import AddCoupon from "./components/coupons/AddCoupon";
 import DeleteCoupon from "./components/coupons/DeleteCoupon";
 import { useUser } from "./hooks/useUser";
 import OrderData from "./components/orders/OrderData";
+import OrderById from "./components/orders/OrderById";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/viewcustomers" exact element={<Customer />} />
           <Route path="/viewallorders" exact element={<AllOrders />} />
           <Route path="/vieworderdetails" exact element={<OrderData />} />
+          <Route path="/vieworder/:orderId" exact element={<OrderById />} />
         </Routes>
       </Router>
     </div>

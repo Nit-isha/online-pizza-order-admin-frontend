@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./AllOrders.css";
 
 export default function AllOrders(props) {
     const [orders, setOrders] = useState([]);
+    const [id, pList, cname] = useState({});
     const { token } = useUser();
     let navigate = useNavigate();
 
@@ -22,6 +23,7 @@ export default function AllOrders(props) {
                 setOrders(json)
             })
     }, [])
+
 
     return (
         <>
@@ -42,33 +44,21 @@ export default function AllOrders(props) {
                                                     <th scope="col">COUPON</th>
                                                     <th scope="col">TYPE</th>
                                                     <th scope="col">CUSTOMER ID</th>
-                                                    <th colSpan={props.maxQuantity} scope="col">PIZZA LIST</th>
                                                 </tr>
                                             </thead>
                                             {
                                                 orders.map((order) => {
-                                                    const { bookingOrderId, orderDate, transactionMode,quantity,totalCost,couponName,orderType,custId,pizzaList} = order;
-                                                    
+                                                    const { bookingOrderId, orderDate, transactionMode, quantity, totalCost, couponName, orderType, custId, pizzaList } = order;
                                                     return (
                                                         <tbody className='tablebody'>
                                                             <tr>
-                                                                <th scope="row" >{bookingOrderId}</th>
+                                                                <th scope="row" ><button className="btn btn-primary mx-2 btn-sm" ><Link to="/vieworderdetails" state={{ id: custId, pList: pizzaList, cName: couponName }}>{bookingOrderId}</Link></button></th>
                                                                 <td>{orderDate}</td>
                                                                 <td>{transactionMode}</td>
                                                                 <td>{totalCost}</td>
                                                                 <td>{couponName}</td>
                                                                 <td>{orderType}</td>
-                                                                <td><button className="btn btn-primary mx-2 btn-sm" id={custId} onClick={() => navigate(`/viewcustomerdetails/${custId}`)}>{custId}</button></td>
-                                                                {
-                                                                    pizzaList.map((pizza)=> {
-                                                                        const { pizzaId, pizzaType, pizzaName, pizzaSize, pizzaDescription, pizzaCost } = pizza;
-                                                                        return (
-                                                                            <>
-                                                                                <td><button className="btn btn-primary mx-2 btn-sm" id={pizzaId} onClick={() => navigate(`/viewpizzadetails/${pizzaId}`)}>{pizzaId}</button></td>
-                                                                            </>
-                                                                        )
-                                                                    })
-                                                                }
+                                                                <td>{custId}</td>
                                                             </tr>
                                                         </tbody>
                                                     )
@@ -85,3 +75,5 @@ export default function AllOrders(props) {
         </>
     )
 }
+
+

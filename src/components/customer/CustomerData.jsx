@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./Customer.css";
 
-export default function CustomerByName(props) {
+export default function CustomerData(props) {
     const [customer, setCustomer] = useState([]);
     const { token } = useUser();
     const location = useLocation();

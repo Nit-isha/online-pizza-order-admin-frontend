@@ -3,12 +3,13 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./Customer.css";
 
-export default function CustomerData(props) {
+export default function CustomerByUserName() {
     const [customer, setCustomer] = useState([]);
     const { token } = useUser();
     const { uname } = useParams();
     const [validateUser, setValidateUser] = useState();
     let navigate = useNavigate();
+    const [error, setError] = useState();
 
     useEffect(() => {
         fetch(`http://localhost:9001/customer/search?uname=${uname}`, {
@@ -28,7 +29,7 @@ export default function CustomerData(props) {
             })
             .then(json => {
                 setCustomer(json)
-            }).catch(err => setValidateUser(err.message))
+            }).catch(err => setError(err.message))
     }, [])
 
     const { customerName, customerMobile, customerEmail, customerAddress, username } = customer;
@@ -61,6 +62,7 @@ export default function CustomerData(props) {
                                                     <td>{username}</td>
                                                 </tr>
                                             </tbody>
+                                            <p id="error">{error}</p>
                                         </table>
                                     </div>
                                 </div>

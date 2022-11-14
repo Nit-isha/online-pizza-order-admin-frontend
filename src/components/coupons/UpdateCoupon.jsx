@@ -13,7 +13,8 @@ export default function UpdateCoupon() {
     return (
         <>
             <div className="container my-3 ">
-                <h1>Update coupon Information</h1>
+                <h1 style={{ textAlign: "center", textTransform: "uppercase", color: "#4CAF50", backgroundColor: "purple", borderRadius: " 15px 50px" }}> Update Coupon Details</h1>
+
                 {
                     <form onSubmit={(e) => {
                         e.preventDefault();
@@ -36,29 +37,6 @@ export default function UpdateCoupon() {
 
                         }).then(() => navigate("/coupon"))
                     }}>
-
-                        {/* <label htmlFor="couponType">Coupon Type</label>
-                    <select name="couponType" id="couponType" onChange={(e)=>setType(e.target.value)} value={type}>
-                        <option value="FLAT">FLAT</option>
-                        <option value="PERCENTAGE">PERCENTAGE</option>
-                    </select>
-                    {console.log(type)}
-                    <br />
-                    <label htmlFor="couponName">Coupon Name</label>
-                    <input type="text" name="couponName" className="form-control" id="couponName" defaultValue={info?.couponName} required />
-                    <br />
-                    <label htmlFor="amount">Amount</label>
-                    <input type="number" name="amount" className="form-control" id="amount"  defaultValue={info?.amount} required />
-                    <br />
-                    <label htmlFor="discount">Discount</label>
-                    <input type="number" name="discount" className="form-control" id="discount" defaultValue={info?.discount} required />
-                    <br />
-                    <label htmlFor="couponDesc">Coupon Description</label>
-                    <textarea rows={3} type="text" name="couponDesc" className="form-control" id="couponDesc" defaultValue={info?.couponDescription} required />
-                    <br />
-                        <input type="submit" value="Update" className='btn btn-success' />
-                        <input type="button" value="Cancel"  className='btn btn-default' onClick={() => navigate("/coupon")} /> */}
-
                         <div className="form-group row ">
                             <label htmlFor="pizzaType" className="col-sm-2 col-form-label">Coupon Name</label>
                             <select name="couponType" id="couponType" className="mx-3">
@@ -90,8 +68,8 @@ export default function UpdateCoupon() {
                                 <textarea rows={3} className="form-control-plaintext" style={{ border: "solid 1px black" }} type="text" name="couponDesc" id="couponDesc" defaultValue={info?.couponDescription} placeholder="Enter coupon description." required />
                             </div>
                         </div>
-                        <input type="submit" className='btn btn-success mx-2 my-1' value="Add" />
-                        <input type="button" className='btn btn-default mx-2 my-1' onClick={() => navigate("/coupon")} value="Cancel" />
+                        <input type="submit" className='btn btn-success btn-lg btn-block mx-2 my-1' value="Add" />
+                        <input type="button" className='btn btn-default btn-lg btn-block mx-2 my-1' onClick={() => navigate("/menu")} value="Cancel" />
                     </form>
                 }
             </div>

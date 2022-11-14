@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./AllOrders.css";
 
+
 export default function OrderById() {
 
     const [order, setOrder] = useState([]);
@@ -40,7 +41,7 @@ export default function OrderById() {
 
     return (
         <>
-            <button className='btn btn-primary mx-2 my-2' onClick={() => navigate("/viewallorders")}>Back</button>
+            <button className='btn btn-primary mx-2 my-2' onClick={() => navigate("/dashboard")}>Back</button>
             <section className="intro">
                 <div className="gradient-custom-1 h-100">
                     <div className="mask d-flex align-items-center h-100">

@@ -9,9 +9,7 @@ export default function CouponData(props) {
     const [array, setArray] = useState({});
     const location = useLocation();
     const { id, pList, cName } = location.state;
-    // const { custId } = useParams();
     const [validateUser, setValidateUser] = useState();
-    let navigate = useNavigate();
 
     useEffect(() => {
         fetch(`http://localhost:9001/coupons/${cName}`, {

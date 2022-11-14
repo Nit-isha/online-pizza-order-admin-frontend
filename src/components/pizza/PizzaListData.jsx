@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { useUser } from "../../hooks/useUser";
 import "./PizzaListData.css";
 
 export default function PizzaData(props) {
     const location = useLocation();
     const { id, pList, cName } = location.state;
-    let navigate = useNavigate();
 
 
     return (

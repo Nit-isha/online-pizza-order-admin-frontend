@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./Customer.css";
 
 export default function CustomerData(props) {
     const [customer, setCustomer] = useState([]);
     const { token } = useUser();
-    const [array, setArray] = useState({});
     const location = useLocation();
     const { id, pList, cName } = location.state;
-    // const { custId } = useParams();
     const [validateUser, setValidateUser] = useState();
     let navigate = useNavigate();
 

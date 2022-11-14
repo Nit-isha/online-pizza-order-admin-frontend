@@ -64,7 +64,7 @@ export default function AllOrders(props) {
                                                                         const { pizzaId, pizzaType, pizzaName, pizzaSize, pizzaDescription, pizzaCost } = pizza;
                                                                         return (
                                                                             <>
-                                                                                <td>{pizzaId}</td>
+                                                                                <td><button className="btn btn-primary mx-2 btn-sm" id={pizzaId} onClick={() => navigate(`/viewpizzadetails/${pizzaId}`)}>{pizzaId}</button></td>
                                                                             </>
                                                                         )
                                                                     })

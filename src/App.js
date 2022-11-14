@@ -20,6 +20,7 @@ import AddCoupon from "./components/coupons/AddCoupon";
 import DeleteCoupon from "./components/coupons/DeleteCoupon";
 import { useUser } from "./hooks/useUser";
 import CustomerData from "./components/orders/CustomerData";
+import PizzaData from "./components/orders/PizzaData";
 
 function App() {
   const { token, logout } = useUser();
@@ -43,6 +44,7 @@ function App() {
         <Route path= "/viewcustomers" exact element= {<Customer/>} />
         <Route path= "/viewallorders" exact element= {<AllOrders maxQuantity={5}/>} />
         <Route path= "/viewcustomerdetails/:custId" exact element= {<CustomerData/>} />
+        <Route path= "/viewpizzadetails/:pizzaId" exact element= {<PizzaData />} />
       </Routes>
         </Router>
       </div>

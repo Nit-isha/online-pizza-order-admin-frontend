@@ -3,17 +3,17 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./CustomerData.css";
 
-export default function CustomerData() {
+export default function PizzaData() {
     
-  const [customer, setCustomer] = useState([]);
+  const [pizza, setPizza] = useState([]);
   const { token } = useUser();
-  const { custId } = useParams();
+  const { pizzaId } = useParams();
   let navigate = useNavigate();
   const [validateUser, setValidateUser] = useState();
 
   
   useEffect(() => {
-      fetch(`http://localhost:9001/customer/${custId}`, {
+      fetch(`http://localhost:9001/menu/${pizzaId}`, {
           method: "GET",
           headers: {
               "content-type": "application/json",
@@ -23,18 +23,18 @@ export default function CustomerData() {
 
         .then(res => {
             if (!res.ok) {
-                throw Error("Customer is not in database");
+                throw Error("Pizza not found in database");
             }
             else {
                 return res.json();
             }
           })
         .then(json => {
-            setCustomer(json)
+            setPizza(json)
         }).catch(err => setValidateUser(err.message))
   }, [])
 
-        const { customerName, customerMobile, customerEmail, customerAddress,username } = customer;
+        const { pizzaID, pizzaType, pizzaName, pizzaSize, pizzaDescription, pizzaCost } = pizza;
 
   return (
       <>
@@ -49,20 +49,22 @@ export default function CustomerData() {
                                       <table className="table mb-0">
                                           <thead>
                                               <tr>
+                                                  <th scope="col">ID</th>
+                                                  <th scope="col">TYPE</th>
                                                   <th scope="col">NAME</th>
-                                                  <th scope="col">CONTACT</th>
-                                                  <th scope="col">EMAIL</th>
-                                                  <th scope="col">ADDRESS</th>
-                                                  <th scope="col">USERNAME</th>
+                                                  <th scope="col">SIZE</th>
+                                                  <th scope="col">DESCRIPTION</th>
+                                                  <th scope="col">COST</th>
                                               </tr>
                                           </thead>
                                                 <tbody className='tablebody'>
                                                     <tr>
-                                                        <th scope="row" >{customerName}</th>
-                                                        <td>{customerMobile}</td>
-                                                        <td>{customerEmail}</td>
-                                                        <td>{customerAddress}</td>
-                                                        <td>{username}</td>
+                                                        <th scope="row" >{pizzaId}</th>
+                                                        <td>{pizzaType}</td>
+                                                        <td>{pizzaName}</td>
+                                                        <td>{pizzaSize}</td>
+                                                        <td>{pizzaDescription}</td>
+                                                        <td>{pizzaCost}</td>
                                                     </tr>
                                                 </tbody>     
                                       </table>

@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useUser } from "../../hooks/useUser";
 import "./Customer.css";
 
-export default function CustomerByName(props) {
+export default function CustomerData(props) {
     const [customer, setCustomer] = useState([]);
     const { token } = useUser();
-    const location = useLocation();
-    const { id, pList, cName } = location.state;
+    const { uname } = useParams();
     const [validateUser, setValidateUser] = useState();
     let navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:9001/customer/${id}`, {
+        fetch(`http://localhost:9001/customer/search?uname=${uname}`, {
             method: "GET",
             headers: {
                 "content-type": "application/json",

@@ -21,6 +21,7 @@ import OrderData from "./components/orders/OrderData";
 import OrderById from "./components/orders/OrderById";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CustomerByName from "./components/customer/CustomerData";
 
 function App() {
   const { token, logout } = useUser();
@@ -46,6 +47,7 @@ function App() {
           <Route path="/viewallorders" exact element={<AllOrders />} />
           <Route path="/vieworderdetails" exact element={<OrderData />} />
           <Route path="/vieworder/:orderId" exact element={<OrderById />} />
+          <Route path="/viewcustomer/:uname" exact element={<CustomerByName />} />
         </Routes>
       </Router>
     </div>

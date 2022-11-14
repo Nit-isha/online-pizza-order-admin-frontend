@@ -52,7 +52,7 @@ export default function AllOrders(props) {
                                                     return (
                                                         <tbody className='tablebody'>
                                                             <tr>
-                                                                <th scope="row" ><button className="btn btn-primary mx-2 btn-sm" ><Link to="/vieworderdetails" state={{ id: custId, pList: pizzaList, cName: couponName }}>{bookingOrderId}</Link>{bookingOrderId}</button></th>
+                                                                <td><Link to="/vieworderdetails" state={{ id: custId, pList: pizzaList, cName: couponName }}>{bookingOrderId}</Link></td>
                                                                 <td>{orderDate}</td>
                                                                 <td>{transactionMode}</td>
                                                                 <td>{totalCost}</td>

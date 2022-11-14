@@ -40,8 +40,8 @@ export default function AllOrders(props) {
                                                     <th scope="col">BOOKING ID</th>
                                                     <th scope="col">DATE</th>
                                                     <th scope="col">TRANSACTION</th>
-                                                    <th scope="col">COST</th>
                                                     <th scope="col">COUPON</th>
+                                                    <th scope="col">AMOUNT</th>
                                                     <th scope="col">TYPE</th>
                                                     <th scope="col">CUSTOMER ID</th>
                                                 </tr>
@@ -55,8 +55,8 @@ export default function AllOrders(props) {
                                                                 <td><Link to="/vieworderdetails" state={{ id: custId, pList: pizzaList, cName: couponName }}>{bookingOrderId}</Link></td>
                                                                 <td>{orderDate}</td>
                                                                 <td>{transactionMode}</td>
-                                                                <td>{totalCost}</td>
                                                                 <td>{couponName}</td>
+                                                                <td>{totalCost}</td>
                                                                 <td>{orderType}</td>
                                                                 <td>{custId}</td>
                                                             </tr>

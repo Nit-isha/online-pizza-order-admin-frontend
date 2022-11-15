@@ -1,14 +1,21 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
-h1{
+
+h1 {
     text-align: center;
-    color: #4CAF50;
+    color: #ffffff;
     background-color: purple;
     text-transform: uppercase;
     border-radius: 15px 50px;
 }
 
+body {
+    background-image: url(../public/bg.jpg);
+    background-attachment: fixed;
+}

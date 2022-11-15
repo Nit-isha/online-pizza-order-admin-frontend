@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useUser } from "../hooks/useUser";
@@ -9,12 +9,18 @@ export default function Login() {
     const [validateUser, setValidateUser] = useState();
     let navigate = useNavigate();
 
+    useEffect(() => {
+        if (token) {
+            navigate("/dashboard");   //Redirecting to Menu page if already logged in
+        }
+    }, [token])
+
 
     return (
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-                    <h2 class="text-center text-dark mt-5">Login Form</h2>
+                    <h2 class="text-center text-light mt-5">Login Form</h2>
                     <div class="card my-5">
                         { !token && 
                             <form class="card-body cardbody-color p-lg-5"

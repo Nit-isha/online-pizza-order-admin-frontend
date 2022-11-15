@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useUser } from "../hooks/useUser";
 import './login.css';
 
@@ -34,6 +35,7 @@ export default function Login() {
                                     })
                                     .then((res) => {
                                         if (!res.ok) {
+                                            toast.error("Invalid Username or Password.")
                                             throw Error("Invalid Username or Password.");
                                         } else {
                                             return res.json();
@@ -41,6 +43,7 @@ export default function Login() {
                                     })
                                     .then((res) => {
                                         login(res.token);
+                                        toast.success("login succesful...")
                                         navigate("/dashboard");
                                     })
                                     .catch((err) => setValidateUser(err.message));

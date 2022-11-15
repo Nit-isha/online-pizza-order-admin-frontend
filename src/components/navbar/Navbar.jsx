@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/useUser';
 
 export default function NavBar() {
@@ -28,7 +29,7 @@ export default function NavBar() {
                             </ul>
                         </div>
                         <form className="d-flex">
-                            <button className="btn btn-outline-danger" type="submit" onClick={() => { logout(); navigate("/login")}} >Logout</button>
+                            <button className="btn btn-outline-danger" type="submit" onClick={() => { logout();toast.success("logout successful"); navigate("/login")}} >Logout</button>
                         </form>
                     
                 </div>

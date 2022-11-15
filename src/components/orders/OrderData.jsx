@@ -7,11 +7,12 @@ export default function OrderData(custId) {
 
   return (
     <>
-      <div><CustomerData /></div>
+
+      <div><CustomerData /></div>   {/*Displays customer data */}
+      <div><br /><br /></div>       
+      <div><PizzaData /></div>      {/*Displays pizza list data */}
       <div><br /><br /></div>
-      <div><PizzaData /></div>
-      <div><br /><br /></div>
-      <div><CouponData /></div>
+      <div><CouponData /></div>     {/*Displays coupon data */}
     </>
   )
 }

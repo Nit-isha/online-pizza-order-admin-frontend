@@ -10,6 +10,8 @@ export default function CouponData(props) {
     const { id, pList, cName } = location.state;
     const [validateUser, setValidateUser] = useState();
 
+   // ----------Fetching coupon details for a specific order---------------
+   
     useEffect(() => {
         fetch(`http://localhost:9001/coupons/${cName}`, {
             method: "GET",

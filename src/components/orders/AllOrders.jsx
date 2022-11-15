@@ -9,6 +9,8 @@ export default function AllOrders(props) {
     const { token } = useUser();
     let navigate = useNavigate();
 
+    // ----------Fetching all orders---------------
+
     useEffect(() => {
         fetch("http://localhost:9001/allorders", {
             method: "GET",
@@ -46,6 +48,9 @@ export default function AllOrders(props) {
                                                     <th scope="col">CUSTOMER ID</th>
                                                 </tr>
                                             </thead>
+                                           
+                                           {/* ----------------Adding data to table-------------- */}
+                                            
                                             {
                                                 orders.map((order) => {
                                                     const { bookingOrderId, orderDate, transactionMode, quantity, totalCost, couponName, orderType, custId, pizzaList } = order;

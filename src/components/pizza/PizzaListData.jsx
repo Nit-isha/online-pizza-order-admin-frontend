@@ -7,6 +7,8 @@ export default function PizzaData(props) {
     const { id, pList, cName } = location.state;
 
 
+    // ----------Retreiving pizza list details for a specific order---------------
+    
     return (
         <>
             <section className="intro">

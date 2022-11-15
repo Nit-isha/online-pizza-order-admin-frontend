@@ -11,6 +11,8 @@ export default function CustomerData(props) {
     const [validateUser, setValidateUser] = useState();
     let navigate = useNavigate();
 
+    // ----------Fetching customer details for a specific order---------------
+
     useEffect(() => {
         fetch(`http://localhost:9001/customer/${id}`, {
             method: "GET",

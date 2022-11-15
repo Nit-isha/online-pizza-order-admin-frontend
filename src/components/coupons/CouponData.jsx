@@ -38,7 +38,7 @@ export default function CouponData(props) {
                 <div className="gradient-custom-1 h-100">
                     <div className="mask d-flex align-items-center h-100">
                         <div className="container">
-                            <h3>Coupon Details</h3>
+                            <h3 className="text-center text-light mt-5">Coupon Details</h3>
                             <div className="row justify-content-center">
                                 <div className="col-12">
                                     <div className="table-responsive bg-white">

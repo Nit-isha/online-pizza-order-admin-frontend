@@ -11,7 +11,7 @@ export default function AddPizza() {
     let navigate = useNavigate();
     
     return (
-        <div className="container my-3">
+        <div className="container my-3" style={{backgroundColor:"white"}}>
             <h1 > Enter Pizza Details</h1>
             {token &&
                 <form

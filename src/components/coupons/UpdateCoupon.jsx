@@ -14,7 +14,7 @@ export default function UpdateCoupon() {
 
     return (
         <>
-            <div className="container my-3 ">
+            <div className="container my-3 " style={{backgroundColor:"white"}}>
                 <h1 > Update Coupon Details</h1>
 
                 {

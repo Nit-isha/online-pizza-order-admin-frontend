@@ -13,8 +13,8 @@ export default function UpdatePizza() {
     const info = usePizzaInfo(pizzaId);
 
     return (
-            <div className='container my-3'>
-                <h1 >Update Pizza Information</h1>
+        <div className='container my-3' style={{ backgroundColor: "white" }}>
+            <h1 >Update Pizza Information</h1>
             <div className="update">
                 {
                     <form onSubmit={(e) => {
@@ -41,39 +41,39 @@ export default function UpdatePizza() {
                     }}>
 
 
-                    <div className="form-group row ">
-                        <label htmlFor="pizzaType" className="col-sm-2 col-form-label">Pizza type</label>
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control-plaintext" style={{border:"solid 1px black"}}name="pizzaType" id="pizzaType" defaultValue={info?.pizzaType} placeholder="Enter pizza type" required/>
+                        <div className="form-group row ">
+                            <label htmlFor="pizzaType" className="col-sm-2 col-form-label">Pizza type</label>
+                            <div className="col-sm-10">
+                                <input type="text" className="form-control-plaintext" style={{ border: "solid 1px black" }} name="pizzaType" id="pizzaType" defaultValue={info?.pizzaType} placeholder="Enter pizza type" required />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-2 col-form-label" htmlFor="pizzaName">Pizza Name</label>
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control-plaintext" style={{border:"solid 1px black"}} name="pizzaName" id="pizzaName" defaultValue={info?.pizzaName} placeholder='Enter pizza name' required />
+                        <div className="form-group row">
+                            <label className="col-sm-2 col-form-label" htmlFor="pizzaName">Pizza Name</label>
+                            <div className="col-sm-10">
+                                <input type="text" className="form-control-plaintext" style={{ border: "solid 1px black" }} name="pizzaName" id="pizzaName" defaultValue={info?.pizzaName} placeholder='Enter pizza name' required />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-2 col-form-label" htmlFor="pizzaSize">Pizza Size</label>
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control-plaintext" style={{border:"solid 1px black"}}  name="pizzaSize" id="pizzaSize" defaultValue={info?.pizzaSize} placeholder='Enter pizza size'  required/>
+                        <div className="form-group row">
+                            <label className="col-sm-2 col-form-label" htmlFor="pizzaSize">Pizza Size</label>
+                            <div className="col-sm-10">
+                                <input type="text" className="form-control-plaintext" style={{ border: "solid 1px black" }} name="pizzaSize" id="pizzaSize" defaultValue={info?.pizzaSize} placeholder='Enter pizza size' required />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-2 col-form-label" htmlFor="pizzaDesc">Pizza Description</label>
-                        <div className="col-sm-10">
-                            <textarea rows={3} className="form-control-plaintext" style={{border:"solid 1px black"}} type="text" name="pizzaDesc" id="pizzaDesc" defaultValue={info?.pizzaDescription} placeholder='Enter pizza description' required />
+                        <div className="form-group row">
+                            <label className="col-sm-2 col-form-label" htmlFor="pizzaDesc">Pizza Description</label>
+                            <div className="col-sm-10">
+                                <textarea rows={3} className="form-control-plaintext" style={{ border: "solid 1px black" }} type="text" name="pizzaDesc" id="pizzaDesc" defaultValue={info?.pizzaDescription} placeholder='Enter pizza description' required />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group row">
-                        <label className="col-sm-2 col-form-label" htmlFor="pizzaCost">Pizza Cost</label>
-                        <div className="col-sm-10">
-                            <input type="number" className="form-control-plaintext" style={{border:"solid 1px black"}} name="pizzaCost" id="pizzaCost" defaultValue={info?.pizzaCost} placeholder='Enter pizza cost' required/>
+                        <div className="form-group row">
+                            <label className="col-sm-2 col-form-label" htmlFor="pizzaCost">Pizza Cost</label>
+                            <div className="col-sm-10">
+                                <input type="number" className="form-control-plaintext" style={{ border: "solid 1px black" }} name="pizzaCost" id="pizzaCost" defaultValue={info?.pizzaCost} placeholder='Enter pizza cost' required />
+                            </div>
                         </div>
-                    </div>
-                    <input type="submit" className="btn btn-success btn-lg btn-block mx-2 my-2" value="Update" />
+                        <input type="submit" className="btn btn-success btn-lg btn-block mx-2 my-2" value="Update" />
                         <input type="button" className="btn btn-default btn-lg btn-block mx-2 my-2" value="Cancel" onClick={() => navigate("/menu")} />
-                    
+
                     </form>
                 }
             </div>

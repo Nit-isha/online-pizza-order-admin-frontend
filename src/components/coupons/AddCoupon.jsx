@@ -10,7 +10,7 @@ export default function AddCoupon() {
     let navigate = useNavigate();
 
     return (
-        <div className="container text-center my-3">
+        <div className="container text-center my-3" style={{backgroundColor:"white"}}>
             <h1 > Enter Coupon Details</h1>
             {token &&
                 <form

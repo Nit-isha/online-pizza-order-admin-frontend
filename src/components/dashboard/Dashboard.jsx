@@ -47,7 +47,8 @@ export default function Dashboard() {
                   <label htmlFor="orderId" className="col-sm-2 col-form-label">Enter Order Id here:</label>
                   <div className="col-sm-10">
                     <input type="number" className="form-control-plaintext" style={{ border: "solid 1px black" }} name="orderId" id="orderId" placeholder="Enter Order Id" autoFocus required />
-                    <button type="submit" className="btn btn-primary my-3">Submit</button>
+                    <button type="submit" className="btn btn-primary btn-lg my-3 mx-2">Submit</button>
+                    <button type="reset" className="btn btn-default btn-lg my-3 mx-2">Reset</button>
                     {/* <p id='error'>{error}</p> */}
                   </div>
                 </div>
@@ -75,7 +76,7 @@ export default function Dashboard() {
 
                   .then(res => {
                     if (!res.ok) {
-                      toast.error("Customer not found in database");
+                      toast.error("username not found in database");
                       throw Error("Customer not found in database");
                     }
                     else {
@@ -89,7 +90,8 @@ export default function Dashboard() {
                   <label htmlFor="uname" className="col-sm-2 col-form-label">Enter Customer Username Here:</label>
                   <div className="col-sm-10">
                     <input type="text" className="form-control-plaintext" style={{ border: "solid 1px black" }} name="uname" id="uname" placeholder="Enter username" required />
-                    <button type="submit" className="btn btn-primary my-3">Submit</button>
+                    <button type="submit" className="btn btn-primary btn-lg my-3 mx-2">Submit</button>
+                    <button type="reset" className="btn btn-default btn-lg my-3 mx-2">Reset</button>
                     {/* <p id='error'>{error}</p> */}
                   </div>
                 </div>

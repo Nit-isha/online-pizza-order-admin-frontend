@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/useUser';
+import '../../index.css';
 
 export default function AddCoupon() {
     const { token } = useUser();
@@ -10,7 +11,7 @@ export default function AddCoupon() {
 
     return (
         <div className="container text-center my-3">
-            <h1 style={{ textAlign: "center", textTransform: "uppercase", color: "#4CAF50", backgroundColor: "purple", borderRadius: " 15px 50px" }}> Enter Coupon Details</h1>
+            <h1 > Enter Coupon Details</h1>
             {token &&
                 <form
                     onSubmit={(e) => {
@@ -76,8 +77,8 @@ export default function AddCoupon() {
                             <textarea rows={3} className="form-control-plaintext" style={{ border: "solid 1px black" }} type="text" name="couponDesc" id="couponDesc" placeholder="Enter coupon description." required />
                         </div>
                     </div>
-                    <input type="submit" className='btn btn-success btn-lg btn-block mx-2 my-1' value="Add" />
-                    <input type="button" className='btn btn-default btn-lg btn-block mx-2 my-1' onClick={() => navigate("/menu")} value="Cancel" />
+                    <input type="submit" className='btn btn-success btn-lg btn-block mx-2 my-2' value="Add" />
+                    <input type="button" className='btn btn-default btn-lg btn-block mx-2 my-2' onClick={() => navigate("/menu")} value="Cancel" />
                     <p id="error">{error}</p>
                 </form>
             }

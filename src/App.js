@@ -22,6 +22,7 @@ import OrderById from "./components/orders/OrderById";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CustomerByUserName from "./components/customer/CustomerByUserName";
+import "./index.css";
 
 function App() {
   const { token, logout } = useUser();

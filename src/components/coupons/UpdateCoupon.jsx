@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useUser } from '../../hooks/useUser';
 import { toast } from 'react-toastify';
 import useCouponInfo from '../../hooks/useCouponInfo';
+import '../../index.css';
 
 export default function UpdateCoupon() {
     let navigate = useNavigate();
@@ -14,7 +15,7 @@ export default function UpdateCoupon() {
     return (
         <>
             <div className="container my-3 ">
-                <h1 style={{ textAlign: "center", textTransform: "uppercase", color: "#4CAF50", backgroundColor: "purple", borderRadius: " 15px 50px" }}> Update Coupon Details</h1>
+                <h1 > Update Coupon Details</h1>
 
                 {
                     <form onSubmit={(e) => {
